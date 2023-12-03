@@ -38,9 +38,26 @@ console.log("hello world")
 
 //fn to find sum of 2 numbers
 
-function sum2(a,b){
-    // console.log(a+b);
-    return a+b;
+// function sum2(a,b){
+//     // console.log(a+b);
+//     return a+b;
+// }
+// let sum = sum2(23,3);
+// console.log(sum);
+
+function sum(num1, num2) {
+    let result = num1 + num2;
+    return result;
 }
-let sum = sum2(23,3);
-console.log(sum);
+
+function displayResult(data) {
+    console.log("Result of the sum is : " + data);
+}
+
+function displayResultPassive(data) {
+    console.log("Sum's result is : " + data);
+}
+
+// You are only allowed to call one function after this
+// How will you displayResult of a sum
+displayResult(sum(5,10));
