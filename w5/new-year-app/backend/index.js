@@ -10,7 +10,7 @@ app.get('/',(req,res)=>{
     res.send('hello ji');
 })
 
-app.post("/todo",function(req,res){
+app.post("/todo", async function(req,res){
     const createPayload = req.body;
     const parsedPayload = createTodo.safeParse(createPayload);
     if(!parsedPayload.success){
@@ -19,6 +19,15 @@ app.post("/todo",function(req,res){
         })
         return;
     }
+
+    await todo.create({
+        title: createPayload.title,
+        desc: createPayload.desc,
+    })
+
+    res.json({
+        msg: "todo created",
+    })
 })
 
 app.get("/todos",function(req,res){
