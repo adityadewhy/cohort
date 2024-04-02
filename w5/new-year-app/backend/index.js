@@ -2,11 +2,9 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const { createTodo } = require("./types");
-
+const { createTodo,updateTodo } = require("./types");
 
 app.use(express.json());
-
 
 app.get('/',(req,res)=>{
     res.send('hello ji');
@@ -24,12 +22,20 @@ app.post("/todo",function(req,res){
 })
 
 app.get("/todos",function(req,res){
-    const updatePayload = req.body;
-    const parse
+    
 
 })
 
 app.post("/done",function(req,res){
+    const updatePayload = req.body;
+    const parsedPayload = updateTodo.safeParse(updatePayload);
+    if(!parsedPayload.success){
+        res.status(411).json({
+            msg:"fix the update typo first",
+        })
+        return;
+    }
+    
     
 })
 
