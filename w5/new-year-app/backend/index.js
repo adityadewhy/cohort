@@ -2,9 +2,14 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const cors = require("cors");
+
 const { createTodo,updateTodo } = require("./types");
 
 app.use(express.json());
+app.use(cors({
+    origin:"https://localhost:5173",
+}));
 
 app.get('/',(req,res)=>{
     res.send('hello ji');
