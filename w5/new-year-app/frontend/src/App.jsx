@@ -1,16 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {useState} from "react";
+import "./App.css";
+import {CreateTodo} from "./components/CreateTodo";
+import {Todos} from "./components/Todos";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      hello ji, main to aditya
-    </>
-  )
+	return (
+		<div>
+			<CreateTodo></CreateTodo>
+			<Todos
+				todos={[
+					{
+						title: "asd",
+						desc: "this is deesc",
+						isCompleted: false,
+					},
+				]}
+			/>
+		</div>
+	);
 }
 
-export default App
+export default App;
