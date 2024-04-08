@@ -10,6 +10,6 @@ const todoScheme = mongoose.Schema({
 
 const todo = mongoose.model("todos",todoScheme);
 
-module.exports({
+module.exports = {
     todo,
-})
+}

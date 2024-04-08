@@ -1,7 +1,7 @@
 export function Todos({todos}) {
 	return (
 		<div>
-			{todos.map(function (todo) {
+			{todos.map( todo => {
 				return (
 					<div>
 						<h1>{todo.title}</h1>

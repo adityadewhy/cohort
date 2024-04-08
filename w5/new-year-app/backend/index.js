@@ -2,7 +2,11 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const {todo} = require("./db")
+
 const cors = require("cors");
+
+
 
 const { createTodo,updateTodo } = require("./types");
 
