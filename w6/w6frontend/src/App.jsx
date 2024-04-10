@@ -17,17 +17,17 @@ function App() {
 
 
   function handleClick(){
-    setItem([...items], {
+    setItem([...items, {
       id: 4,
       title : Math.random(),
       desc: Math.random(),
-    })
+    }])
   }
 
 	return (
 		<div>
       <button onClick={handleClick}> add new todo </button>
-			{items.map( item => <Todo title= {items.title} desc= {items.desc} />)}
+			{items.map( item => <Todo title= {item.title} desc= {item.desc} />)}
 		</div>
 	);
 }
